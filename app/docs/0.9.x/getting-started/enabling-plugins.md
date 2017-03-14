@@ -39,14 +39,14 @@ As an example, we'll have you configure the [key-auth][key-auth] plugin to add a
       --header 'Host: mockbin.com'
     ```
 
-    Since you did not specify the required `apikey` header or parameter, the response should be `403 Forbidden`:
+    Since you did not specify the required `apikey` header or parameter, the response should be `401 Unauthorized`:
 
     ```http
-    HTTP/1.1 403 Forbidden
+    HTTP/1.1 401 Unauthorized
     ...
 
     {
-      "message": "Your authentication credentials are invalid"
+      "message": "No API key found in headers or querystring"
     }
     ```
 
